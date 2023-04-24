@@ -58,24 +58,54 @@ body {
 }
 
 #album-view{
-	display: block;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
 	width: 100%;
 	padding: 50px;
 	box-sizing: border-box;
 }
-li{
-	margin-bottom: 10px;
+.album-item{
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	background-color: #221f1f;
+	text-align: center;
+	height: 300px;
+	overflow: hidden;
+	padding: 10px;
+	gap: 10px;
+	font-size: larger;
+	border-radius: 10px;
+	align-items: center;
+	box-sizing: border-box;
+	text-shadow: 2px 2px #B81D24;
+}
+.album-item:hover{
+	box-shadow: 0 0 0 5px;
 }
 form {
 	display: flex;
 	flex-direction: column;
 }
 
-
-
-
-
+img{
+	border-radius: 10px;
+	height: 100%;
+}
 
 .no-scroll {
 	overflow: hidden;
 }
+
+@media screen and (max-width: 600px) {
+	.album-item{
+		width: 100vw;
+		height: fit-content;
+		font-size: xx-large;
+	}
+	img{
+		width: 100%;
+	}
+  }

@@ -19,17 +19,23 @@ function search(event)
 		console.log('Eseguo ricerca elementi riguardanti: ' + text);
 
         // Esegui fetch
-        let url = 'https://api.watchmode.com/v1/autocomplete-search/?apiKey='+ mv_key + '&search_field=name&search_value=' + content;
+        let url = 'https://api.watchmode.com/v1/autocomplete-search/?apiKey='+ mv_key + '&search_field=name&search_value=' + content + '&search_type=2';
 
         fetch(url, { method: 'Get' })
             .then((res) => res.json())
             .then((json) => {
                 console.log(json);
                 for (const movie of json.results) {
-                    let li = document.createElement("li");
-                    li.append(movie.name);
-                    album.appendChild(li);
+                    let div = document.createElement("div");
+                    let img = document .createElement("img");
+                    img.src = movie.image_url;
+                    img.alt = "https://s.studiobinder.com/wp-content/uploads/2017/12/Movie-Poster-Template-Dark-with-Image.jpg?x81279"
+                    div.append(movie.name);
+                    div.appendChild(img);
+                    div.classList.add("album-item");
+                    album.appendChild(div);
                 }
+
                 //let image = document.createElement(img);
                 /*for (const movie of json.results) {
                     //console.log(movie.id);
@@ -42,6 +48,9 @@ function search(event)
                         });
 
                 }*/
+                console.log(document.querySelectorAll(".album-item"));
             });
+
+        
     }
 }
