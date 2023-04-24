@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Netflix Sans';
+    font-weight: 300;
+    font-display: optional;
+    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format('woff')
+}
+
+body {
+	color: white;
+	background-color: black;
+	font-family: 'Roboto', sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px;
+}
+
+#punchQ{
+	font-family: 'Netflix Sans', ;
+	color: #B81D24;
+	font-size: 50px;
+	text-align: center;
+	margin:20px;
+}
+#punchQ2{
+	color: #B81D24;
+	font-size: 30px;
+	text-align: center;
+	margin-top: 0px;
+}
+#content{
+	background-color: #221f1f;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	border: 0px;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.button{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: white;
+	color: #221f1f;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	font-size: 30px;
+	padding: 10px;
+	text-align: center;
+}
+.button:hover{
+	background-color: #B81D24;
+	color: white;
+}
+
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+article {
+	margin: 20px 0;
+	background-color: rgba(0,0,0,0.1);
+	width: 66%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}
+
+
+
+#album-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#album-view .album {
+  margin: 10px;
+  border: 1px solid slategray;
+  padding: 10px;
+  max-width: 230px;  
+  max-height: 230px; 
+  display: flex;
+  flex-direction:column;
+  cursor: pointer;
+  background-color: white; 
+}
+
+#album-view .album:hover {
+	background-color: #cfe3ff;
+}
+
+#album-view img {
+	max-width: 100%;
+	max-height: 70%;
+}
+
+
+#modale.hidden {
+	display: none; 
+}
+
+#modale {
+	position: fixed;
+	top: -20;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center; 
+}
+
+#modale img {
+	height: 50%;
+	border: 1px solid black;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
