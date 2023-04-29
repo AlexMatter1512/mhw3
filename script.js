@@ -1,18 +1,28 @@
 mv_key = 'EzuMS8qxUYdInQJntuW3xdyGS01jEI18phlFCx72'
-const form = document.querySelector('#search_button');
+const button = document.querySelector('#search_button');
 const album = document.querySelector('#album-view');
-form.addEventListener('click', search)
+const input = document.getElementById("content");
 
+//se viene premuto enter viene triggerato l'evento 'click' sul pulsante del form
+input.addEventListener("keypress", onEnter); 
+function onEnter(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("search_button").click();
+  }
+}
+
+button.addEventListener('click', search)
 function search(event)
 {
-	event.preventDefault();
-
+    //se sono gia presenti elementi nella 'album view' vengono rimossi prima di aggiungere quelli della nuova ricerca
     while (album.firstChild) {
         album.removeChild(album.lastChild);
     }
+
 	// Leggo il valore del campo di testo
 	const content = document.querySelector('#content').value;
-  
+
 	// verifico che sia stato effettivamente inserito del testo
 	if(content) {
 	    const text = encodeURIComponent(content);
