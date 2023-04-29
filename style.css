@@ -16,13 +16,15 @@ body {
 }
 
 #punchQ{
-	font-family: 'Netflix Sans', ;
+	font-family: 'Darumadrop One', cursive;
 	color: #B81D24;
 	font-size: 50px;
 	text-align: center;
 	margin:20px;
+	max-width: 900px;
 }
 #punchQ2{
+	font-family: 'Darumadrop One', cursive;
 	color: #B81D24;
 	font-size: 30px;
 	text-align: center;
@@ -90,13 +92,70 @@ form {
 	flex-direction: column;
 }
 
-img{
+#album-view img{
 	border-radius: 10px;
 	height: 100%;
+}
+a{
+	display: inline-block;
+	text-decoration: none;
+	background-color: white;
+	color: #221f1f;
+	border-radius: 10px;
+	border: solid #B81D24 3px;
+	text-align: center;
+	margin: 5px;
+	padding: 1px;
+}
+
+a:hover{
+	background-color: #B81D24;
+	color: white;
 }
 
 .no-scroll {
 	overflow: hidden;
+}
+
+#infoModal{
+	display: none;
+	background-color: #00000090;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+.modal{
+	display: flex;
+	text-align: center;
+	border-radius: 10px;
+	border: solid #B81D24 2px;
+	background-color: #221f1f;
+	height: 278px;
+	max-width: 90vw;
+	position: relative;
+}
+#modalImg{
+	border-radius: 10px;
+	width: 185px;
+	height: 278px;
+}
+
+#modalServices{
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding: 0px 20px 20px 20px;
+}
+.close{
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	line-height: 10px;
+	height: 10px;
+	font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -105,7 +164,31 @@ img{
 		height: fit-content;
 		font-size: xx-large;
 	}
-	img{
+	#album-view img{
 		width: 100%;
+	}
+	.modal{
+		overflow: auto;
+	}
+	#modalImg{
+		width: 100%;
+		height: auto;
+	}
+	#modalServices{
+		overflow: visible;
+	}
+	.modal{
+		flex-direction: column;
+		height: 90vh;
+	}
+	.close{
+		position: fixed;
+		right: 40px;
+		top: 70px;
+	}
+	#punchQ{
+		display: flex;
+		height: 100vh;
+		align-items: center;
 	}
   }
