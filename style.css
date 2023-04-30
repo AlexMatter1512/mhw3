@@ -1,194 +1,260 @@
-@font-face {
-    font-family: 'Netflix Sans';
-    font-weight: 300;
-    font-display: optional;
-    src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Lt.woff) format('woff')
-}
-
 body {
-	color: white;
-	background-color: black;
-	font-family: 'Roboto', sans-serif;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 0px;
+  color: white;
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px;
 }
 
-#punchQ{
-	font-family: 'Darumadrop One', cursive;
-	color: #B81D24;
-	font-size: 50px;
-	text-align: center;
-	margin:20px;
-	max-width: 900px;
-}
-#punchQ2{
-	font-family: 'Darumadrop One', cursive;
-	color: #B81D24;
-	font-size: 30px;
-	text-align: center;
-	margin-top: 0px;
-}
-#content{
-	background-color: #221f1f;
-	border-radius: 10px;
-	width: 300px;
-	height: 50px;
-	border: 0px;
-	color: white;
-	font-size: 30px;
-	padding: 10px;
-	margin-bottom: 10px;
-}
-.button{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background-color: white;
-	color: #221f1f;
-	border-radius: 10px;
-	width: 300px;
-	height: 50px;
-	font-size: 30px;
-	padding: 10px;
-	text-align: center;
-}
-.button:hover{
-	background-color: #B81D24;
-	color: white;
+#BB {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 15px;
+  top: 15px;
 }
 
-#album-view{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 20px;
-	width: 100%;
-	padding: 50px;
-	box-sizing: border-box;
+#text {
+  background-image: url("images/quote.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 440px;
+  padding-top: 20px;
+  margin: 0px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin-top: 150px;
+  padding: 50px;
+  padding-top: 100px;
+  font-size: 20px;
 }
-.album-item{
-	display: flex;
-	flex-direction: column;
-	width: 200px;
-	background-color: #221f1f;
-	text-align: center;
-	height: 300px;
-	overflow: hidden;
-	padding: 10px;
-	gap: 10px;
-	font-size: larger;
-	border-radius: 10px;
-	align-items: center;
-	box-sizing: border-box;
-	text-shadow: 2px 2px #B81D24;
+
+#wrapper {
+  margin-top: -150px;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: none;
 }
-.album-item:hover{
-	box-shadow: 0 0 0 5px;
+
+#him {
+  height: 150px;
+  width: 150px;
+  z-index: 999;
 }
+
+#punchQ {
+  font-family: "Darumadrop One", cursive;
+  color: #b81d24;
+  font-size: 50px;
+  text-align: center;
+  margin: 20px;
+  max-width: 900px;
+}
+
+#punchQ2 {
+  font-family: "Darumadrop One", cursive;
+  color: #b81d24;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+#content {
+  background-color: #221f1f;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  border: 0px;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  color: #221f1f;
+  border-radius: 10px;
+  width: 300px;
+  height: 50px;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #b81d24;
+  color: white;
+}
+
+#album-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.album-item {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color: #221f1f;
+  text-align: center;
+  height: 300px;
+  overflow: hidden;
+  padding: 10px;
+  gap: 10px;
+  font-size: larger;
+  border-radius: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  text-shadow: 2px 2px #b81d24;
+}
+
+.album-item:hover {
+  box-shadow: 0 0 0 5px;
+}
+
 form {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-#album-view img{
-	border-radius: 10px;
-	height: 100%;
-}
-a{
-	display: inline-block;
-	text-decoration: none;
-	background-color: white;
-	color: #221f1f;
-	border-radius: 10px;
-	border: solid #B81D24 3px;
-	text-align: center;
-	margin: 5px;
-	padding: 1px;
+.album-item img {
+  border-radius: 10px;
+  flex-grow: 1;
+  height: 50%;
 }
 
-a:hover{
-	background-color: #B81D24;
-	color: white;
+a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: white;
+  color: #221f1f;
+  border-radius: 10px;
+  border: solid #b81d24 3px;
+  text-align: center;
+  margin: 5px;
+  padding: 1px;
+}
+
+a:hover {
+  background-color: #b81d24;
+  color: white;
 }
 
 .no-scroll {
-	overflow: hidden;
+  overflow: hidden;
 }
 
-#infoModal{
-	display: none;
-	background-color: #00000090;
-	position: fixed;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: 100%;
-}
-.modal{
-	display: flex;
-	text-align: center;
-	border-radius: 10px;
-	border: solid #B81D24 2px;
-	background-color: #221f1f;
-	height: 278px;
-	max-width: 90vw;
-	position: relative;
-}
-#modalImg{
-	border-radius: 10px;
-	width: 185px;
-	height: 278px;
+#infoModal {
+  display: none;
+  background-color: #00000090;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
-#modalServices{
-	display: flex;
-	flex-direction: column;
-	overflow: auto;
-	padding: 0px 20px 20px 20px;
+.modal {
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+  border: solid #b81d24 2px;
+  background-color: #221f1f;
+  height: 278px;
+  max-width: 90vw;
+  position: relative;
 }
-.close{
-	display: inline-block;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	line-height: 10px;
-	height: 10px;
-	font-size: 30px;
+
+#modalImg {
+  border-radius: 10px;
+  width: 185px;
+  height: 278px;
+}
+
+#modalServices {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 0px 20px 20px 20px;
+}
+
+.close {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  line-height: 10px;
+  height: 10px;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 600px) {
-	.album-item{
-		width: 100vw;
-		height: fit-content;
-		font-size: xx-large;
+  
+	#him {
+		height: 100px;
+		width: 100px;
+		z-index: 999;
+	  }
+
+	#text{
+		margin: 0px;
+		margin-top: 145px;
+		width: 90vw;
+		padding-top: 50px;
 	}
-	#album-view img{
-		width: 100%;
-	}
-	.modal{
-		overflow: auto;
-	}
-	#modalImg{
-		width: 100%;
-		height: auto;
-	}
-	#modalServices{
-		overflow: visible;
-	}
-	.modal{
-		flex-direction: column;
-		height: 90vh;
-	}
-	.close{
-		position: fixed;
-		right: 40px;
-		top: 70px;
-	}
-	#punchQ{
-		display: flex;
-		height: 100vh;
-		align-items: center;
-	}
+
+	  #punchQ{
+		margin-top: 115px;
+	  }
+	
+  .album-item {
+    width: 100vw;
+    height: fit-content;
+    font-size: xx-large;
   }
+
+  #album-view img {
+    width: 100%;
+  }
+
+  .modal {
+    overflow: auto;
+  }
+
+  #modalImg {
+    width: 100%;
+    height: auto;
+  }
+
+  #modalServices {
+    overflow: visible;
+  }
+
+  .modal {
+    flex-direction: column;
+    height: 90vh;
+  }
+
+  .close {
+    position: fixed;
+    right: 40px;
+    top: 70px;
+  }
+}

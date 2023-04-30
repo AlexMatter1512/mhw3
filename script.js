@@ -2,8 +2,36 @@ mv_key = 'EzuMS8qxUYdInQJntuW3xdyGS01jEI18phlFCx72'
 const button = document.getElementById("search_button");
 const album = document.getElementById("album-view");
 const input = document.getElementById("content");
-const modal = document.getElementById("infoModal")
+const modal = document.getElementById("infoModal");
+const breaking = document.getElementById('him');
+const wrapper = document.getElementById('wrapper');
+
 //se viene premuto enter viene triggerato l'evento 'click' sul pulsante del form
+breaking.addEventListener('click', breakingQuote);
+
+function breakingQuote(event) {
+    if (wrapper.style.display == "flex") {
+        wrapper.style.display = "none"
+    } else {
+        fetch("https://api.breakingbadquotes.xyz/v1/quotes")
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json)
+            let quote = document.createElement("p");
+            let author = document.createElement("p");
+            quote.append(json[0].quote);
+            author.append(json[0].author);
+            while (text.firstChild) {
+                text.removeChild(text.lastChild);
+            }
+            text.appendChild(quote);
+            text.appendChild(author);
+        });
+        wrapper.style.display = "flex";
+    }
+    
+}
+
 input.addEventListener("keypress", onEnter); 
 function onEnter(event) {
     if (event.key === "Enter") {
@@ -91,6 +119,9 @@ window.onclick = function(event) {
     if (event.target == infoModal) {
         console.log("chiudo")
       infoModal.style.display = "none";
+    }
+    if (event.target == wrapper) {
+        wrapper.style.display = "none";
     }
   }
 
